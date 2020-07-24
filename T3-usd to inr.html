@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<script>
+function conv() {
+  var dol;
+  var prmpt = prompt("Please enter the value in USD");
+  var inr = parseInt(prmpt) * 75;
+  if (prmpt == null || prmpt == "") {
+    dol = "User cancelled the prompt.";
+  } else {
+    dol = prmpt + " USD is equal to " + inr + " INR";
+  }
+  document.getElementById("demo").innerHTML = dol;
+}
+</script>
+
+<body>
+
+<center>
+Click the button to convert USD to INR<br>
+	<button onclick="conv()">Convert</button>
+
+<p id="demo"></p>
+
+</center>
+</body>
+</html>

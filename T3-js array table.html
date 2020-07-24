@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<h2>Table created using Javascript Array</h2>
+	<script type="text/javascript">
+		studs=[['Roll No','Student Name','College Name','Marks','Semester'],['1','Virat','IIT','100','8'],['2','Rohit','IIT','100','6'],['3','Shikhar','JNU','90','6'],['4','Rahul','IIT','80','4'],['5','Dhoni','IISC','70','4'],['6','Hardik','IIM','50','8']]
+document.write("<table border='1px'>")
+
+for(i=0;i<studs.length;i++)
+{
+document.write("<tr>")
+
+for (j=0;j<studs[i].length;j++)
+{
+
+document.write("<td>"+studs[i][j]+"</td>")
+
+}
+
+document.write("</tr>")
+}
+
+document.write("</table")
+	</script>
+</head>
+<body>
+
+</body>
+</html>
