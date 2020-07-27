@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script type="text/javascript">
+	
+$(function(){
+$('.s1').click(
+
+function(){$("p").hide()})
+
+
+})
+
+$(function(){
+$('.s2').click(
+
+function(){$("p.abc").hide()})
+
+
+})
+
+$(function(){
+$('.s3').click(
+
+function(){$(".abc").hide()})
+
+
+})
+
+$(function(){
+$('.fi').click(
+
+function(){$("div").fadeIn()})
+
+
+})
+
+$(function(){
+$('.fo').click(
+
+function(){$("div").fadeOut()})
+
+
+})
+
+$(function(){
+$('.sall').click(
+
+function(){$("p").show()})
+
+
+})
+
+$(function(){
+$('.sall').click(
+
+function(){$("div").show()})
+
+
+})
+
+$(function(){
+  $("#clk").click(function(){
+    $("#bx").slideToggle("slow");
+  });
+});
+
+</script>
+
+</head>
+<body>
+<p>This is a plain 'P' tag</p>
+
+<p class="abc">This is a 'P' tag with class abc</p>
+
+<div class="abc">This is a 'DIV' tag with class abc</div><br>
+
+<div>This is a 'DIV' tag without any class</div>
+<br>
+
+<button class="s1">Submit 1</button>
+<button class="s2">Submit 2</button>
+<button class="s3">Submit 3</button>
+<button class="fo">Fade Out</button>
+<button class="fi">Fade In</button><br><br><br>
+<button class="sall">Show All</button><br><br>
+
+<button id="clk">Click</button>
+<input type="textbox" id="bx">
+
+</body>
+</html>
