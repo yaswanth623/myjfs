@@ -1,0 +1,53 @@
+create table TimeTable
+(
+Day varchar(4),
+Sess number,
+Room varchar(3),
+Faculty varchar(20),
+Sem number,
+Subject varchar(20),
+constraint tt primary key(Day,Sess,Room),
+constraint tt1 unique(Day,Sess,Faculty),
+constraint tt2 unique(Day,Sess,Sem)
+);
+
+insert into TimeTable values('Mon','1','R1','Raj','1','JAVA')
+
+1 row created.
+
+SQL> insert into TimeTable values('Mon','1','R2','Ram','1','JAVA');
+insert into TimeTable values('Mon','1','R2','Ram','1','JAVA')
+*
+ERROR at line 1:
+ORA-00001: unique constraint (DXCFS.TT2) violated
+
+
+SQL> insert into TimeTable values('Mon','1','R2','Ram','3','JAVA');
+
+1 row created.
+
+SQL> insert into TimeTable values('Mon','1','R1','John','5','DBMS');
+insert into TimeTable values('Mon','1','R1','John','5','DBMS')
+*
+ERROR at line 1:
+ORA-00001: unique constraint (DXCFS.TT) violated
+
+
+SQL> insert into TimeTable values('Mon','2','R1','John','5','DBMS');
+
+1 row created.
+
+SQL> insert into TimeTable values('Tue','1','R1','John','5','DBMS');
+
+1 row created.
+
+SQL> select * from TimeTable;
+
+DAY        SESS ROO FACULTY                     SEM SUBJECT
+---- ---------- --- -------------------- ---------- --------------------
+Mon           1 R1  Raj                           1 JAVA
+Mon           1 R2  Ram                           3 JAVA
+Mon           2 R1  John                          5 DBMS
+Tue           1 R1  John                          5 DBMS
+
+SQL>
