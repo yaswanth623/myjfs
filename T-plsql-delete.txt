@@ -1,0 +1,219 @@
+SQL> conn dxcfs
+Enter password:
+Connected.
+SQL> create table Employee
+  2  (
+  3  EmpFName varchar(20),
+  4  EmpMName varchar(20),
+  5  EmpLastName varchar(20),
+  6  EmpAge int check(EmpAge between 1 and 49),
+  7  EmpCity varchar(20) check(EmpCity like 'B%'),
+  8  EmpDesignation varchar(50) check(EmpDesignation like '%Manager'),
+  9  EmpId varchar(5) primary key,
+ 10  EmpDOB date,
+ 11  constraint eidck check(length(EmpId)=5)
+ 12  );
+
+Table created.
+
+SQL> insert into Employee values('Anthony','Edward','Stark','45','Bengaluru','Operations Manager','Emp01',to_date('30-07-2020','dd-mm-yyyy'));
+
+1 row created.
+
+SQL> insert into Employee values('Steven','Grant','Rogers','25','Bengaluru','Training Manager','Emp02',to_date('30-07-2020','dd-mm-yyyy'));
+
+1 row created.
+
+SQL> insert into Employee values('Thor','Asgardian','Odinson','49','Bengaluru','Accounting Manager','Emp03',to_date('30-07-2020','dd-mm-yyyy'));
+
+1 row created.
+
+SQL> insert into Employee values('Robert','Bruce','Banner','35','Bengaluru','Technical Manager','Emp04',to_date('30-07-2020','dd-mm-yyyy'));
+
+1 row created.
+
+SQL> insert into Employee values('Natasha','Alianovna','Romanova','21','Bangkok','Finance Manager','Emp05',to_date('30-07-2020','dd-mm-yyyy'));
+
+1 row created.
+
+SQL> select * from Employee;
+
+EMPFNAME             EMPMNAME             EMPLASTNAME              EMPAGE
+-------------------- -------------------- -------------------- ----------
+EMPCITY              EMPDESIGNATION                                     EMPID
+-------------------- -------------------------------------------------- -----
+EMPDOB
+---------
+Anthony              Edward               Stark                        45
+Bengaluru            Operations Manager                                 Emp01
+30-JUL-20
+
+Steven               Grant                Rogers                       25
+Bengaluru            Training Manager                                   Emp02
+30-JUL-20
+
+EMPFNAME             EMPMNAME             EMPLASTNAME              EMPAGE
+-------------------- -------------------- -------------------- ----------
+EMPCITY              EMPDESIGNATION                                     EMPID
+-------------------- -------------------------------------------------- -----
+EMPDOB
+---------
+
+Thor                 Asgardian            Odinson                      49
+Bengaluru            Accounting Manager                                 Emp03
+30-JUL-20
+
+Robert               Bruce                Banner                       35
+Bengaluru            Technical Manager                                  Emp04
+
+EMPFNAME             EMPMNAME             EMPLASTNAME              EMPAGE
+-------------------- -------------------- -------------------- ----------
+EMPCITY              EMPDESIGNATION                                     EMPID
+-------------------- -------------------------------------------------- -----
+EMPDOB
+---------
+30-JUL-20
+
+Natasha              Alianovna            Romanova                     21
+Bangkok              Finance Manager                                    Emp05
+30-JUL-20
+
+
+SQL> Select * from Employee;
+
+EMPFNAME             EMPMNAME             EMPLASTNAME              EMPAGE
+-------------------- -------------------- -------------------- ----------
+EMPCITY              EMPDESIGNATION                                     EMPID
+-------------------- -------------------------------------------------- -----
+EMPDOB
+---------
+Anthony              Edward               Stark                        45
+Bengaluru            Operations Manager                                 Emp01
+30-JUL-20
+
+Steven               Grant                Rogers                       25
+Bengaluru            Training Manager                                   Emp02
+30-JUL-20
+
+EMPFNAME             EMPMNAME             EMPLASTNAME              EMPAGE
+-------------------- -------------------- -------------------- ----------
+EMPCITY              EMPDESIGNATION                                     EMPID
+-------------------- -------------------------------------------------- -----
+EMPDOB
+---------
+
+Thor                 Asgardian            Odinson                      49
+Bengaluru            Accounting Manager                                 Emp03
+30-JUL-20
+
+Robert               Bruce                Banner                       35
+Bengaluru            Technical Manager                                  Emp04
+
+EMPFNAME             EMPMNAME             EMPLASTNAME              EMPAGE
+-------------------- -------------------- -------------------- ----------
+EMPCITY              EMPDESIGNATION                                     EMPID
+-------------------- -------------------------------------------------- -----
+EMPDOB
+---------
+30-JUL-20
+
+Natasha              Alianovna            Romanova                     21
+Bangkok              Finance Manager                                    Emp05
+30-JUL-20
+
+
+SQL> update Employee set EmpCity='Baghdad' where EmpId='Emp04';
+
+1 row updated.
+
+SQL> commit;
+
+Commit complete.
+
+SQL> delete from Employee where EmpId='Emp03';
+
+1 row deleted.
+
+SQL> delete from Employee;
+
+4 rows deleted.
+
+SQL> select*from employee;
+
+no rows selected
+
+SQL> rollback;
+
+Rollback complete.
+
+SQL> select*from employee;
+
+EMPFNAME             EMPMNAME             EMPLASTNAME              EMPAGE
+-------------------- -------------------- -------------------- ----------
+EMPCITY              EMPDESIGNATION                                     EMPID
+-------------------- -------------------------------------------------- -----
+EMPDOB
+---------
+Anthony              Edward               Stark                        45
+Bengaluru            Operations Manager                                 Emp01
+30-JUL-20
+
+Steven               Grant                Rogers                       25
+Bengaluru            Training Manager                                   Emp02
+30-JUL-20
+
+EMPFNAME             EMPMNAME             EMPLASTNAME              EMPAGE
+-------------------- -------------------- -------------------- ----------
+EMPCITY              EMPDESIGNATION                                     EMPID
+-------------------- -------------------------------------------------- -----
+EMPDOB
+---------
+
+Thor                 Asgardian            Odinson                      49
+Bengaluru            Accounting Manager                                 Emp03
+30-JUL-20
+
+Robert               Bruce                Banner                       35
+Baghdad              Technical Manager                                  Emp04
+
+EMPFNAME             EMPMNAME             EMPLASTNAME              EMPAGE
+-------------------- -------------------- -------------------- ----------
+EMPCITY              EMPDESIGNATION                                     EMPID
+-------------------- -------------------------------------------------- -----
+EMPDOB
+---------
+30-JUL-20
+
+Natasha              Alianovna            Romanova                     21
+Bangkok              Finance Manager                                    Emp05
+30-JUL-20
+
+
+SQL> select EmpFName,EmpMName,EmpLastName,EmpDOB from employee;
+
+EMPFNAME             EMPMNAME             EMPLASTNAME          EMPDOB
+-------------------- -------------------- -------------------- ---------
+Anthony              Edward               Stark                30-JUL-20
+Steven               Grant                Rogers               30-JUL-20
+Thor                 Asgardian            Odinson              30-JUL-20
+Robert               Bruce                Banner               30-JUL-20
+Natasha              Alianovna            Romanova             30-JUL-20
+
+SQL> select substr(EmpFName,1,1) ||'.'||substr(EmpMName,1,1)||'.'||EmpLastNamed as Name from Employee;
+select substr(EmpFName,1,1) ||'.'||substr(EmpMName,1,1)||'.'||EmpLastNamed as Name from Employee
+                                                              *
+ERROR at line 1:
+ORA-00904: "EMPLASTNAMED": invalid identifier
+
+
+SQL> select substr(EmpFName,1,1) ||'.'||substr(EmpMName,1,1)||'.'||EmpLastName as Name from Employee;
+
+NAME
+------------------------------
+A.E.Stark
+S.G.Rogers
+T.A.Odinson
+R.B.Banner
+N.A.Romanova
+
+SQL>
