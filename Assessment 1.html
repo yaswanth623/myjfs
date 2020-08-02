@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style type="text/css">
+.classname {
+	-moz-box-shadow:inset 0px 1px 0px 0px #bbdaf7;
+	-webkit-box-shadow:inset 0px 1px 0px 0px #bbdaf7;
+	box-shadow:inset 0px 1px 0px 0px #bbdaf7;
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #79bbff), color-stop(1, #378de5) );
+	background:-moz-linear-gradient( center top, #79bbff 5%, #378de5 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#79bbff', endColorstr='#378de5');
+	background-color:#79bbff;
+	-webkit-border-top-left-radius:6px;
+	-moz-border-radius-topleft:6px;
+	border-top-left-radius:6px;
+	-webkit-border-top-right-radius:6px;
+	-moz-border-radius-topright:6px;
+	border-top-right-radius:6px;
+	-webkit-border-bottom-right-radius:6px;
+	-moz-border-radius-bottomright:6px;
+	border-bottom-right-radius:6px;
+	-webkit-border-bottom-left-radius:6px;
+	-moz-border-radius-bottomleft:6px;
+	border-bottom-left-radius:6px;
+text-indent:0;
+	border:1px solid #84bbf3;
+	display:inline-block;
+	color:#ffffff;
+	font-family:arial;
+	font-size:15px;
+	font-weight:bold;
+	font-style:normal;
+height:40px;
+	line-height:40px;
+width:200px;
+	text-decoration:none;
+	text-align:center;
+	text-shadow:0px 1px 0px #528ecc;
+}.classname:hover {
+	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #378de5), color-stop(1, #79bbff) );
+	background:-moz-linear-gradient( center top, #378de5 5%, #79bbff 100% );
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#378de5', endColorstr='#79bbff');
+	background-color:#378de5;
+}.classname:active {
+	position:relative;
+	top:1px;
+}</style>
+<script type="text/javascript">
+	
+function namevalidate()
+{
+var name= document.getElementById('name').value;
+var isalph=false;
+
+
+for(i=0;i<name.length;i++)
+{
+if(name[i] >='A' && name[i]<='Z' || name[i] >='a' && name[i]<='z')
+{
+isalph=true;
+break;
+}
+}
+
+if(isalph)
+	return true;
+else{
+alert('Enter Name using alphabets only')
+	return false;
+}
+
+
+}
+
+types=["select","Graduation","Post Graduation"];
+
+
+function filldd()
+{
+var typeDD=document.getElementById('type');
+for(i=0;i<types.length;i++){
+var ele=document.createElement('option');
+ele.text=types[i];
+typeDD.add(ele,i+1)
+}
+}
+
+
+   data=[['Bachelor of Arts','Bachelor of Engineering','Bachelor of Technology','Bachelor of Science'],['Master of Arts','Master of Engineering','Master of Technology','Master of Science']];
+
+
+function fillData()
+{
+var typeDDN=document.getElementById('type');
+  var selectedIdx= typeDDN.selectedIndex;
+
+console.log(selectedIdx);
+
+var dataDD=document.getElementById('dd');
+
+dataDD.innerText=null;
+
+
+for(i=0;i<data[selectedIdx-1].length;i++)
+{
+
+var ele=document.createElement('option');
+ele.text=data[selectedIdx-1][i];
+
+dataDD.add(ele,i+1)
+
+
+}
+
+
+}
+
+function comparepsw(){
+   var p1 =document.getElementById('pwd').value;
+   var p2 =document.getElementById('cpwd').value;
+   var iseq = false;
+   if(p1 == p2){
+      iseq = true;}
+   else{
+   	alert('Passwords does not match')
+   	return false;
+   }
+}
+
+</script>
+
+
+</head>
+
+<body bgcolor="black" onload="filldd()">
+<center>
+<table align="center">
+<font face="Arial">
+
+<form action="task.html" method="get">
+<br>
+<div style="background-color: white; width: 500px; height: 530px">
+<div style="background-color: black">
+<font face="Arial" size="5" color="white"><b>REGISTRATION FORM</b></font>
+</div>
+<br>
+NAME<br><input type="text" id="name" placeholder="Enter Your Name" style="width: 400px; height: 25px" required=""><br><br>
+
+
+DATE OF BIRTH<br><input type="date" name="date" id="dob" max="2002-07-31" style="width: 400px; height: 25px" required=""><br><br>
+
+
+
+COURSE<br><select id="type" onchange="fillData()" style="width: 400px; height: 25px" required=""></select><br><br>
+
+DEGREE<br><select id="dd" style="width: 400px; height: 25px" required=""></select><br><br>
+
+PASSWORD<br><input type="password" id="pwd" placeholder="Enter a Password" style="width: 400px; height: 25px" required=""><br><br>
+
+
+
+CONFIRM PASSWORD<br><input type="password" id="cpwd" placeholder="Enter the Password again" style="width: 400px; height: 25px" required=""><br><br>
+
+<font size="1">
+<a href="Assignment1.html">Terms & Conditions</a></font><br><br>
+
+<input type="submit" onclick="namevalidate(); return comparepsw()" value="Register" class="classname">
+
+</div>
+</form>
+</font>
+</table>
+</center>
+</body>
+</html>
