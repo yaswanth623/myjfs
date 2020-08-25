@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Employee Registration</title>
+</head>
+<body>
+
+<form method="post" action="DisplayEmp">
+<h2>EMPLOYEE REGISTRATION</h2>
+Name<br>
+<input type="text" name="Name"><br><br>
+Employee ID<br>
+<input type="number" name="EmployeeID"><br><br>
+Address<br>
+<textarea name="Address"></textarea><br><br>
+Password<br>
+<input type="Password" name="Password"><br><br>
+Confirm Password<br>
+<input type="Password" name="confirmPassword"><br><br>
+Gender<br>
+<select name="Gender">
+	<option value="Male">Male</option>
+	<option value="Female">Female</option>
+	<option value="Other">Other</option>
+</select><br><br>
+Languages Known<br>
+<input type="checkbox" value="java" name="languagesKnown">Java<br>
+<input type="checkbox" value="python" name="languagesKnown">Python<br>
+<input type="checkbox" value="c" name="languagesKnown">C<br><br>
+Date of Birth<br>
+<input type="date" name="DOB"><br><br>
+Security Question<br>
+<select name="SecurityQuestion">
+	<option value="What is your place of birth?">What is your place of birth?</option>
+	<option value="What was your first pet?">What was your first pet?</option>
+</select><br><br>
+Security Answer<br>
+<input type="text" name="SecurityAnswer"><br><br>
+<input type="submit">
+
+
+
+</form>
+
+</body>
+</html>
