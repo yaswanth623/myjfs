@@ -1,0 +1,15 @@
+create sequence MySeq
+  2  start with 1
+  3  increment by 1
+  4  maxvalue 100;
+------------------------
+
+create table player
+  2  (
+  3  playerid char(7),
+  4  fname varchar(20),
+  5  lname varchar(20),
+  6  dob Date,
+  7  place varchar(20),
+  8  team varchar(20)
+  9  );
