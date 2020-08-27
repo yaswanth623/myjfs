@@ -1,9 +1,9 @@
 create table products
-  2  (
-  3  prod_Id int,
-  4  prod_Name varchar(20),
-  5  prod_price float,
-  6  mfd date,
-  7  colour varchar(10),
-  8  exp_date date
-  9  );
+(
+prod_Id int,
+prod_Name varchar(20),
+prod_price float,
+mfd date,
+colour varchar(10),
+exp_date date
+);
