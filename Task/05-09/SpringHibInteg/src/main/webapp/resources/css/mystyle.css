@@ -1,0 +1,13 @@
+body {
+  background-color: red;
+}
+
+input[type=submit] {
+            background-color: black;
+            border: none;
+            text-decoration: none;
+            color: white;
+            padding: 10px 60px;
+            margin: 20px 20px;
+            cursor: pointer;
+         }
