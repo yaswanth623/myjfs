@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Implementation-Title: myhospitalrest
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: ab72
+Implementation-Vendor-Id: com.hospital
+Build-Jdk: 1.8.0_261
+Implementation-URL: http://projects.spring.io/spring-boot/myhospitalre
+ st/
+Created-By: Maven Integration for Eclipse
+Implementation-Vendor: Pivotal Software, Inc.
+
