@@ -1,0 +1,23 @@
+<body >
+<input type="checkbox">Dark Mode
+<div>
+
+    THIS IS DIV TAG
+    <p *ngIf="isVisible">THIS IS P TAG</p>
+    
+</div>
+
+<div>
+
+    <select [(ngModel)]="selectedUniv" (change)="disp()">
+        <option [(ngValue)]="selectedUniv" disabled>Select</option>
+        <option *ngFor="let u of univ">{{u}}</option>
+    </select>
+</div>
+
+<div *ngIf="fillHeroes">
+    <select>
+        <option *ngFor="let hero of fillHeroes">{{hero}}</option>
+    </select>
+</div>
+</body>

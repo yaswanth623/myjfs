@@ -1,0 +1,31 @@
+<div [style.background-color]="isDark ? 'grey':'white'">
+<input type="checkbox" (click)="changeMode()">Dark Mode<br>
+<br>This<br>is<br>a<br>div<br>tag
+
+
+<div>
+<br>
+Phone Number: <input type="text">
+<input *ngIf="isVisible" type="submit" (click)="changeStatus()" value= "Remove Alternate Number">
+<input *ngIf="!isVisible" type="submit" (click)="changeStatus()" value= "Add Alternate Number">
+<p *ngIf="isVisible">
+Alternate Number: <input type="text">
+</p>
+</div>
+
+
+<div>
+    <select [(ngModel)]="selectedUniv" (change)="disp()">
+        <option *ngFor="let u of univ">{{u}}</option>
+    </select>
+</div>
+
+<div *ngIf="fillHeroes">
+    <table style="width:50%" border="2px">
+        <tr><th>Names</th></tr>
+        <tr *ngFor="let hero of fillHeroes">{{hero}}</tr>
+    </table>
+</div>
+
+</div>
+
