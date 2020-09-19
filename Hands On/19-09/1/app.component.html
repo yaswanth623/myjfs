@@ -1,0 +1,40 @@
+<form (submit)="savePatient()"> 
+
+Patient ID:<input type="number" name="patientId" [(ngModel)]="patient.patientId">
+<br>
+Patient Name:<input type="text" name="patientName" [(ngModel)]="patient.patientName">
+<br>
+Status:<input type="text" name="status" [(ngModel)]="patient.status">
+<br>
+Age:<input type="number" name="age" [(ngModel)]="patient.age">
+<br>
+Symptoms:<input type="text" name="symptoms" [(ngModel)]="patient.symptoms">
+<br>
+<input type="submit" value="save patient">
+</form>
+<br>
+<input type="submit" (click)="getPatient()" value="Search By ID"> &nbsp; &nbsp;
+<input type="submit" (click)="deletePatient()" value="Delete">&nbsp; &nbsp;
+<input type="submit" (click)="updatePatient()" value="Update">&nbsp; &nbsp;
+
+<input type="submit" (click)="getPatients()" value="All Patients">
+<table border="1px" *ngIf="patients.length>0"> 
+  <tr>
+    <td> Patient ID </td> 
+    <td> Name</td> 
+    <td> Status</td> 
+    <td> Age</td> 
+    <td> Symptoms</td> 
+  </tr>
+    
+  <tr *ngFor="let patient of patients">
+    <td> {{patient.patientId}}</td> 
+    <td> {{patient.patientName}}</td>
+    <td> {{patient.status}}</td>
+    <td> {{patient.age}}</td>
+    <td> {{patient.symptoms}}</td>
+  </tr>
+</table>
+
+
+<router-outlet></router-outlet>
